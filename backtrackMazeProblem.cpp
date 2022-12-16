@@ -12,12 +12,14 @@ class Solution{
 	private:
 		/* vector<vector<int>> mat; */
 		T mat;
+		vector<vector<pair<int,int>>> solutionMatrix;
 	public:
+		void printPaths(ostream& out=cout);
 		void print(ostream& out = cout);
+		void sortSolution();
 		Solution(T mat){
-			if( typeid(T) != typeid(vector<vector<int>>) ){
-				cout << 
-					"Wrong Type Matrix Recieved"<<endl;
+			if( typeid(T) != typeid(vector<vector<char>>) ){
+				cout << "Wrong Type Matrix Recieved"<<endl;
 					errLog(112);
 				return;
 			}
@@ -25,15 +27,32 @@ class Solution{
 			print();
 		}
 		vector<vector<pair<int,int>>> allPaths();
-
+		bool comp(vector<pair<int,int>> element1,vector<pair<int,int>> element2);
 };
 
+template <typename T>
+bool Solution<T>::comp(vector<pair<int,int>> element1,vector<pair<int,int>> element2){
+	return element1.size()<element2.size();
+}
+template <typename T>
+void Solution<T>::sortSolution(){
+	sort(solutionMatrix.begin(),solutionMatrix.end(),comp);
+}
+// put random rat and cheese
+template <typename T>
+void randomPositionTarget(T& mat){
+	int rw = rand()%mat.size();
+	int cl = rand()%mat[0].size();
+	mat[rw][cl]	= '&';		// rat
+	rw = rand()%mat.size();
+	cl = rand()%mat[0].size();
+	mat[rw][cl]	= '^';		// cheese
+}
 void fstore(auto obj){
 	// fstore function receives any object and perform _obj.print(store)_  operation
 	// in which store is a output file stream.
 	//
 	// print() function should be print(ostream& out) where _out_ recieves file stream & when calling this function
-	//
 	
 	/* fstream store("out.txt",ios::out); */
 	fstream store("out.txt",ios::app);
@@ -43,54 +62,63 @@ void fstore(auto obj){
 int otherMain();
 
 // Generate Random bool matrix , when row and coloumn are specified.
-vector <vector<int>> generateMatrix(int rw,int cl){
-	vector<int> arr;
-	vector <vector<int>> matrix;
+vector <vector<char>> generateMatrix(int rw,int cl){
+	vector<char> arr;
+	vector <vector<char>> matrix;
 	for (int i=0; i< rw; ++i){
 		for (int j=0; j< cl; ++j){
 			bool state = rand()%2 == 0;
-			arr.push_back(state);
+			char ch = state?'1':'0';
+			arr.push_back(ch);
 		}
 		matrix.push_back(arr);
 		arr.clear();
 	}
-	cout << " in gen cl: " << matrix.size()<< " rw: "<< matrix[0].size()<<endl;
 	return matrix;
 }
 
 // Generate random matrix
-vector <vector<int>> generateMatrix(){
+vector <vector<char>> generateMatrix(){
 	 int cl = 3+rand()%5;	// random number bw 3 and 8
 	 int rw = 3+rand()%5;
-	 cout << "cl: " <<cl<< " rw: "<<rw <<endl;
 	 return generateMatrix(rw,cl);
 }
 
+auto getPath(auto mat,pair<int,int> Spr,pair<int,int> Dpr){
+	vector<vector<pair<int,int>>> result;
+	vector<pair<int,int>> arr;
+	/* pair<int,int> pr; */
+}
 int main(int argc, char *argv[])
 {
+/*	
 	srand(time(0));
-	otherMain();
-	/* generateMatrix(); */
-	return 0;
-}
-int otherMain()
-{
 	vector<vector<int>> mat{
 			{1, 1, 0, 0},
 			{0, 1, 1, 0},
 			{0, 0, 1, 1},
 			{0, 1, 0, 1},
 	};
+	auto result = getPath(mat,Spr,Dpr);
+*/	
+	otherMain();
+	return 0;
+}
+int otherMain()
+{
 	auto ranMat = generateMatrix();
+	/*
 	int rw = ranMat.size();
 	int cl = ranMat[0].size();
-	cout << "cl: " <<cl<< " rw: "<<rw <<endl;
-	
+	*/
+	randomPositionTarget(ranMat);
+	Solution S1(ranMat);
 	errLog(0xFF01);
 	errLog(0x0A01);
 	errLog(0x0FF1);
-	Solution S1(ranMat);
-	S1.print();
+	/* S1.print(); */
+	S1.allPaths();
+	S1.printPaths();
 	fstore(S1);
 	/* auto ans = S1.allPaths(); */
 	return 0;
@@ -99,18 +127,20 @@ int otherMain()
 
 template<typename T>
 void Solution<T>::print(ostream& out){
-	if ( typeid(this->mat) != typeid(vector<vector<int>>))
+	if ( typeid(this->mat) != typeid(vector<vector<char>>))
 	{
 	out << "type doesn't match" <<endl;
 	return;
 	}
-	out << "\tGIVEN MATRIX "<< endl<<endl;
+	out << "\tGIVEN MATRIX "<<endl;
+	out <<"ROWS: " << mat.size()<<" COLOUMS: "<< mat[0].size()<<endl;
 	for (auto arr: mat){
 		for ( auto val: arr ){
-			out <<"\t"<< val;
+			out <<"  "<< val;
 		}
 		out << endl;
 	}
+	out << endl;
 }
 
 template<typename T>
@@ -121,9 +151,20 @@ vector<vector<pair<int,int>>> Solution<T>::allPaths(){
 	pr = {3,5};
 	li.push_back(pr);
 	ans.push_back(li);
+	solutionMatrix = ans;
 	return ans;
 }
-
+// print obtained paths
+template<typename T>
+void Solution<T>::printPaths(ostream& out){
+	for (auto arr: solutionMatrix){
+		for(auto pr:arr ){
+			out << "("<<pr.first << "," <<pr.second <<")";
+			out << "->" ;
+		}
+		out <<endl;
+	}
+}
 void errLog(int errInt){
 	fstream err("errLog.txt",ios::app);
 	err << errInt ;
