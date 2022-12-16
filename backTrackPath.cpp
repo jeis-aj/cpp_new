@@ -2,14 +2,15 @@
 #include <vector>
 using namespace std; 
 
-vector<vector<pair<int,int>>> getPath(auto mat, auto Spr, auto Dpr,auto Ppr);
-void printPaths(auto mat,ostream& out);
+/* vector<vector<pair<int,int>>> getPath(auto mat, auto Spr, auto Dpr,auto Ppr); */
+void getPath(auto mat,auto & result, auto Spr, auto Dpr,auto Ppr);
+void printPaths(auto mat,ostream& out = cout);
 ostream& fn(ostream& = cout);
 
 bool operator==(const pair<int,int>& one,const pair<int,int>& two){
 	if (one.first != two.first || one.second != two.second )
 		return false;
-		return true;
+	return true;
 }
 vector<pair<int,int>> mkPairlist(auto mat, pair<int,int>& Npr ,pair<int,int>& Ppr){
 	pair<int,int> pr;
@@ -45,33 +46,32 @@ int main(int argc, char *argv[])
 			{0, 1, 0, 1},
 	};
 	pair<int,int> Npr{0,0};
-	pair<int,int> Dpr{1,6};
-	pair<int,int> Ppr{1,0};
-	/* vector<vector<pair<int,int>>> result = getPath(mat,Spr,Dpr,Ppr); */
-	auto list = mkPairlist(mat,Npr,Ppr);
-	for ( auto ele: list ){
-		cout << "x:" <<ele.first << "y:"<< ele.second;
-		cout <<endl;
-	}
-	/* cout << pr2 == pr; */
+	pair<int,int> Spr{0,0};
+	pair<int,int> Dpr{2,2};
+	pair<int,int> Ipr{-1,-1};
+
+	vector<vector<pair<int,int>>> result;
+	getPath(mat,result,Spr,Dpr,Ipr);
+	/* cout << "hello" <<endl; */
+	printPaths(result);
 	return 0;
 }
 
 
-vector<vector<pair<int,int>>> getPath(auto mat, auto Spr, auto Dpr,auto Ppr) {
-/*
-vector<vector<pair<int,int>>> solutionMatrix;
-vector<pair<int,int>> arr;
-pair<int,int> pr;
-int rwSize = mat.size();
-int clSize = mat[0].size();
-*/
-vector<vector<pair<int,int>>> temp;
-for (auto CurrentPair: nextPathlist){
-	auto nextPathlist = mkPairlist(mat,CurrentPair,Ppr);
-		getPath(mat,CurrentPair,Dpr,Spr);
-}
-return solutionMatrix;
+void getPath(auto mat,auto & result, auto Spr, auto Dpr,auto Ppr) {
+	vector<pair<int,int>> temp;
+	if (Spr == Dpr){
+		result.push_back(temp);
+	}
+	else if(temp.front() == temp.back());
+	else{
+		temp.push_back(Spr);
+		auto nextPathlist = mkPairlist(mat,Spr,Ppr);
+		for (auto CurrentPair: nextPathlist){
+			getPath(mat,result,CurrentPair,Dpr,Spr);
+		}
+	}
+	temp.pop_back();
 }
 
 void printPaths(auto mat,ostream& out){
