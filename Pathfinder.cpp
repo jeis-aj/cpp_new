@@ -9,6 +9,9 @@ using namespace std;
 
 void errLog(int);
 
+		vector <vector<char>> generateMatrix();
+		vector <vector<char>> generateMatrix(int rw,int cl);
+
 template<typename T>
 class Solution{
 	private:
@@ -19,25 +22,24 @@ class Solution{
 		pair<int,int> DestPair;
 		pair<int,int> Initialpair{-1,-1};
 		vector<vector<pair<int,int>>> result;
+		pair<int,int> Spr;
+		pair<int,int> Ppr;
 	public:
 		void fstore(string fileName,void (*fn)(ostream&));
-		vector<pair<int,int>> mkPairlist(pair<int,int> Npr ,pair<int,int> Ppr);
-		void getPath(pair<int,int> Spr ,pair<int,int> Ppr );
-		vector <vector<char>> generateMatrix();
-		vector <vector<char>> generateMatrix(int rw,int cl);
-		void printVisual(auto mat,auto vect,auto Spr,auto Dpr);
+		vector<pair<int,int>> mkPairlist( auto Npr , auto Ppr);
+		void getPath();
+		void printVisual();
 		void printPaths(ostream& out=cout);
 		void print(ostream& out = cout);
 		void sortSolution();
 		pair<pair<int,int>,pair<int,int>> randomPositionTarget();
-		void putTargets (pair<pair<int,int>,pair<int,int>> TargetPairs);
+		/* void putTargets (pair<pair<int,int>,pair<int,int>> TargetPairs); */
 		bool comp(vector<pair<int,int>> element1,vector<pair<int,int>> element2);
 		vector<vector<pair<int,int>>> allPaths();
 		T getMatrix()	{
 			return mat;
 		}
-		Solution(){};
-		Solution(T mat){
+		Solution( T mat){
 			if( typeid(T) != typeid(vector<vector<char>>) ){
 				cout << "Wrong Type Matrix Recieved"<<endl;
 					errLog(112);
@@ -46,12 +48,13 @@ class Solution{
 			this->mat = mat;
 		}
 };
-
+/*
 template <typename T>
 void Solution<T>::putTargets (pair<pair<int,int>,pair<int,int>> TargetPairs){
 	SourcePair = TargetPairs.first;
 	DestPair = TargetPairs.second;
 }
+*/
 template <typename T>
 bool Solution<T>::comp(vector<pair<int,int>> element1,vector<pair<int,int>> element2){
 	return element1.size()<element2.size();
@@ -63,18 +66,15 @@ void Solution<T>::sortSolution(){
 // put random rat and cheese
 template <typename T>
 pair<pair<int,int>,pair<int,int>> Solution<T>::randomPositionTarget(){
-	pair<int,int> Spr;
-	pair<int,int> Dpr;
-
-	Spr.first = rand()%mat.size();
-	Spr.second = rand()%mat[0].size();
-	mat[Spr.first][Spr.second]	= '&';		// rat
+	SourcePair.first = rand()%mat.size();
+	SourcePair.second = rand()%mat[0].size();
+	mat[SourcePair.first][SourcePair.second]	= '&';		// rat
 							//
-	Dpr.first = rand()%mat.size();
-	Dpr.second = rand()%mat[0].size();
-	mat[Dpr.first][Dpr.second]	= '@';		// cheese
-
-	return {Spr,Dpr};
+	DestPair.first = rand()%mat.size();
+	DestPair.second = rand()%mat[0].size();
+	mat[DestPair.first][DestPair.second]	= '@';		// cheese
+	Spr = SourcePair;
+	return {SourcePair,DestPair};
 }
 
 template <typename T>
@@ -89,16 +89,15 @@ void Solution<T>::fstore(string fileName,void (*fn)(ostream&)){
 	fn(store);
 	store.close();
 }
-int otherMain();
 
 // Generate Random bool matrix , when row and coloumn are specified.
-template <typename T>
-vector<vector<char>> Solution<T>::generateMatrix(int rw,int cl){
+//
+vector<vector<char>> generateMatrix(int rw,int cl){
 	vector<char> arr;
 	vector <vector<char>> matrix;
 	for (int i=0; i< rw; ++i){
 		for (int j=0; j< cl; ++j){
-			bool state = rand()%7 <= 1;			// probability of tracks 1/7
+			bool state = rand()%4 <= 1;			// probability of tracks 1/7
 			char ch = state?'.':' ';
 			arr.push_back(ch);
 		}
@@ -109,10 +108,11 @@ vector<vector<char>> Solution<T>::generateMatrix(int rw,int cl){
 }
 
 // Generate random matrix
-template <typename T>
-vector <vector<char>> Solution<T>::generateMatrix(){
-	 int cl = 19+rand()%9;	// random number bw 3 and 8
-	 int rw = 19+rand()%9;
+vector <vector<char>> generateMatrix(){
+	 /* int cl = 19+rand()%9;	// random number bw 3 and 8 */
+	 /* int rw = 19+rand()%9; */
+	 int cl = 3+rand()%3;	// random number bw 3 and 8
+	 int rw = 3+rand()%3;
 	 return generateMatrix(rw,cl);
 }
 
@@ -120,14 +120,14 @@ vector <vector<char>> Solution<T>::generateMatrix(){
 int main(int argc, char *argv[])
 {
 	srand(time(0));
-	/* auto ranMat = generateMatrix(); */
-	Solution<vector<vector<char>>> S1;
-	S1.generateMatrix();
+	auto ranMat = generateMatrix();
+	Solution  S1(ranMat);
 	auto pos = S1.randomPositionTarget();
 	S1.print();
-	S1.putTargets(pos);
-	/* S1.getPath(pos.first,pos.second); */
+	S1.getPath();
 	S1.printPaths();
+	S1.printVisual();
+	cout<< "\n\thello" <<endl;
 	/* cout << S1.result.empty(); */
 	/*
 	errLog(0xFF01);
@@ -140,7 +140,7 @@ int main(int argc, char *argv[])
 
 
 template<typename T>
-void Solution<T>::print(ostream& out){
+void Solution<T>::print(ostream& out){	//		prints matrix in in its original form
 	if ( typeid(this->mat) != typeid(vector<vector<char>>))
 	{
 	out << "type doesn't match" <<endl;
@@ -158,7 +158,7 @@ void Solution<T>::print(ostream& out){
 }
 
 template<typename T>
-void Solution<T>::getPath( pair<int,int> Spr, pair<int,int> Ppr) {
+void Solution<T>::getPath() {
 	static vector<pair<int,int>> temp;
 	static map <pair<int,int>,bool> mp;
 	if (Spr == DestPair){
@@ -179,7 +179,8 @@ void Solution<T>::getPath( pair<int,int> Spr, pair<int,int> Ppr) {
 		auto nextPathlist = mkPairlist(Spr,Ppr);
 		/* printList(nextPathlist); */
 		for (auto CurrentPair: nextPathlist){
-			getPath(CurrentPair,Spr);
+			Spr = CurrentPair;
+			getPath();
 		}
 		mp[temp.back()]=false;
 		temp.pop_back();
@@ -187,8 +188,12 @@ void Solution<T>::getPath( pair<int,int> Spr, pair<int,int> Ppr) {
 }
 // print obtained paths
 template<typename T>
-void Solution<T>::printPaths(ostream& out){
-	for (auto arr: solutionMatrix){
+void Solution<T>::printPaths(ostream& out){		// prints Solution vector (result)
+	if(result.empty()){
+		cout<< "No Path Available " <<endl;
+		return;
+	}
+	for (auto arr: result){
 		for(auto pr:arr ){
 			out << "("<<pr.first << "," <<pr.second <<")";
 			out << "->" ;
@@ -227,10 +232,14 @@ void errLog(int errInt){
 }
 
 template<typename T>
-void Solution<T>::printVisual(auto mat,auto vect,auto Spr,auto Dpr){
+void Solution<T>::printVisual(){
+	if(result.empty()){
+		cout<< "No Path Available " <<endl;
+		return;
+	}
 	pair<int,int> pr;
 	map<pair<int,int>,bool> mp; 
-	for (auto cont: vect){
+	for (auto cont: result){
 		cout <<endl<<"New Path:"<<endl;
 		for (auto Mpr: cont){
 			mp[Mpr] = true;
@@ -238,10 +247,10 @@ void Solution<T>::printVisual(auto mat,auto vect,auto Spr,auto Dpr){
 			for(int i=0; i <mat.size(); ++i){
 				for(int j=0; j <mat[0].size(); ++j){
 					pr = {i,j};
-					if ( pr == Spr){
+					if ( pr == SourcePair){
 							cout <<" & ";
 					}
-					else if ( pr == Dpr){
+					else if ( pr == DestPair){
 							cout <<" @ ";
 					}
 						else if(mp[pr]){
@@ -257,7 +266,7 @@ void Solution<T>::printVisual(auto mat,auto vect,auto Spr,auto Dpr){
 }
 
 template<typename T>
-vector<pair<int,int>> Solution<T>::mkPairlist(pair<int,int> Npr ,pair<int,int> Ppr){
+vector<pair<int,int>> Solution<T>::mkPairlist( auto Npr , auto Ppr){
 	pair<int,int> pr;
 	vector<pair<int,int>> rtPr;
 	int rwSize = mat.size();
@@ -279,7 +288,8 @@ vector<pair<int,int>> Solution<T>::mkPairlist(pair<int,int> Npr ,pair<int,int> P
 					/* int  ch = mat[pr.first][pr.second]; */
 					char ch = mat[pr.first][pr.second];
 					/* if (ch == 1) */
-					if (ch == '.')
+					/* if (ch == '.' || ch == '&' || ch == '@') */
+					if (ch != ' ')
 					rtPr.push_back(pr); 
 				}
 		}
