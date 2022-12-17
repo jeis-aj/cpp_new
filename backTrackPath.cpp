@@ -41,15 +41,25 @@ void printList(auto vect){
 		cout << "x:" <<Spr.first<<" y:"<<Spr.second <<" -> ";
 	}
 	cout <<endl;}
-void printVisual(auto mat,auto vect);
+void printVisual(auto mat,auto vect,auto Spr,auto Dpr);
 int main(int argc, char *argv[])
 {
 	srand(time(0));
+	/*
+	vector<vector<int>> mat{
+			{0, 1, 0, 0, 1, 1},
+			{1, 0, 1, 1, 0, 1},
+			{0, 1, 0, 1, 0, 1},
+			{1, 0, 1, 0, 1, 0},
+			{0, 1, 0, 1, 0, 1},
+			{1, 1, 1, 1, 1, 0},
+	};
+	*/
 	vector<vector<int>> mat{
 		{1, 1, 0, 0},
-			{0, 1, 1, 0},
-			{0, 0, 1, 1},
-			{0, 1, 0, 1},
+		{0, 0, 1, 1},
+		{1, 0, 1, 0},
+		{0, 1, 0, 1},
 	};
 	pair<int,int> Npr{0,0};
 	pair<int,int> Spr{0,0};
@@ -60,8 +70,8 @@ int main(int argc, char *argv[])
 	getPath(mat,result,Spr,Dpr,Ipr);
 	/* auto vect = mkPairlist(mat,Spr,Npr); */
 	/* cout << "hello" <<endl; */
-	printVisual(mat,result);
-	printPaths(result);
+	printVisual(mat,result,Spr,Dpr);
+	/* printPaths(result); */
 	return 0;
 }
 
@@ -73,6 +83,7 @@ void getPath(auto mat,auto & result, auto Spr, auto Dpr,auto Ppr) {
 		/* cout << "dest reach" <<endl; */
 		temp.push_back(Spr);
 		result.push_back(temp);
+		/* mp.clear(); */
 		temp.pop_back();
 	}
 	else if(mp[Spr]){
@@ -88,10 +99,12 @@ void getPath(auto mat,auto & result, auto Spr, auto Dpr,auto Ppr) {
 		for (auto CurrentPair: nextPathlist){
 			getPath(mat,result,CurrentPair,Dpr,Spr);
 		}
+		mp[temp.back()]=false;
 		temp.pop_back();
 	}
 }
-void printVisual(auto mat,auto vect){
+void printVisual(auto mat,auto vect,auto Spr,auto Dpr){
+	pair<int,int> pr;
 	map<pair<int,int>,bool> mp; 
 	for (auto cont: vect){
 		cout <<endl<<"New Path:"<<endl;
@@ -100,8 +113,15 @@ void printVisual(auto mat,auto vect){
 		}
 			for(int i=0; i <mat.size(); ++i){
 				for(int j=0; j <mat[0].size(); ++j){
-						if(mp[{i,j}]){
-							cout <<" * ";
+					pr = {i,j};
+					if ( pr == Spr){
+							cout <<" & ";
+					}
+					else if ( pr == Dpr){
+							cout <<" @ ";
+					}
+						else if(mp[pr]){
+							cout <<" . ";
 						}
 						else
 							cout << "   ";
