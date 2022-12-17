@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <map>
 #include <vector>
 using namespace std; 
@@ -30,7 +31,11 @@ vector<pair<int,int>> mkPairlist(auto mat, pair<int,int> Npr ,pair<int,int> Ppr)
 			if ( pr.second < clSize && pr.second >= 0 )
 				if ( pr == Ppr);
 				else
+				{
+					int  ch = mat[pr.first][pr.second];
+					if (ch == 1)
 					rtPr.push_back(pr); 
+				}
 		}
 	}
 	return rtPr;
@@ -42,6 +47,7 @@ void printList(auto vect){
 	}
 	cout <<endl;}
 void printVisual(auto mat,auto vect,auto Spr,auto Dpr);
+void printMat(auto mat);
 int main(int argc, char *argv[])
 {
 	srand(time(0));
@@ -56,18 +62,29 @@ int main(int argc, char *argv[])
 	};
 	*/
 	vector<vector<int>> mat{
-		{1, 1, 0, 0},
+		{1, 1, 1, 0},
 		{0, 0, 1, 1},
-		{1, 0, 1, 0},
+		{1, 0, 1, 1},
 		{0, 1, 0, 1},
 	};
 	pair<int,int> Npr{0,0};
 	pair<int,int> Spr{0,0};
 	pair<int,int> Dpr{3,3};
 	pair<int,int> Ipr{-1,-1};
+	
+	cout << " MATRIX "<< endl;
+	printMat(mat);
+	cout << endl;
 
 	vector<vector<pair<int,int>>> result;
 	getPath(mat,result,Spr,Dpr,Ipr);
+	if (result.empty()){
+		cout << "No Path Available. " <<endl;
+		return 0;
+	}
+	sort(result.begin(),result.end(),[](vector<pair<int,int>> one,vector<pair<int,int>> two){
+			return one.size() < two.size();
+			});
 	/* auto vect = mkPairlist(mat,Spr,Npr); */
 	/* cout << "hello" <<endl; */
 	printVisual(mat,result,Spr,Dpr);
@@ -138,5 +155,14 @@ void printPaths(auto mat,ostream& out){
 			out << "->" ;
 		}
 		out <<endl;
+	}
+}
+
+void printMat(auto mat){
+	for (auto arr: mat){
+		for ( auto val: arr ){
+			cout << " "<< val << " ";
+		}
+		cout << endl;
 	}
 }

@@ -17,6 +17,9 @@ class Solution{
 		void printPaths(ostream& out=cout);
 		void print(ostream& out = cout);
 		void sortSolution();
+		T getMatrix()	{
+			return mat;
+		}
 		Solution(T mat){
 			if( typeid(T) != typeid(vector<vector<char>>) ){
 				cout << "Wrong Type Matrix Recieved"<<endl;
@@ -24,7 +27,7 @@ class Solution{
 				return;
 			}
 			this->mat = mat;
-			print();
+			/* print(); */
 		}
 		vector<vector<pair<int,int>>> allPaths();
 		bool comp(vector<pair<int,int>> element1,vector<pair<int,int>> element2);
@@ -46,7 +49,7 @@ void randomPositionTarget(T& mat){
 	mat[rw][cl]	= '&';		// rat
 	rw = rand()%mat.size();
 	cl = rand()%mat[0].size();
-	mat[rw][cl]	= '^';		// cheese
+	mat[rw][cl]	= '@';		// cheese
 }
 void fstore(auto obj){
 	// fstore function receives any object and perform _obj.print(store)_  operation
@@ -67,8 +70,8 @@ vector <vector<char>> generateMatrix(int rw,int cl){
 	vector <vector<char>> matrix;
 	for (int i=0; i< rw; ++i){
 		for (int j=0; j< cl; ++j){
-			bool state = rand()%2 == 0;
-			char ch = state?'1':'0';
+			bool state = rand()%7 <= 1;			// probability of tracks 1/7
+			char ch = state?'.':' ';
 			arr.push_back(ch);
 		}
 		matrix.push_back(arr);
@@ -79,8 +82,8 @@ vector <vector<char>> generateMatrix(int rw,int cl){
 
 // Generate random matrix
 vector <vector<char>> generateMatrix(){
-	 int cl = 3+rand()%5;	// random number bw 3 and 8
-	 int rw = 3+rand()%5;
+	 int cl = 19+rand()%9;	// random number bw 3 and 8
+	 int rw = 19+rand()%9;
 	 return generateMatrix(rw,cl);
 }
 
@@ -89,38 +92,19 @@ auto getPath(auto mat,pair<int,int> Spr,pair<int,int> Dpr){
 	vector<pair<int,int>> arr;
 	/* pair<int,int> pr; */
 }
-int main(int argc, char *argv[])
+int nextMain()
 {
-/*	
 	srand(time(0));
-	vector<vector<int>> mat{
-			{1, 1, 0, 0},
-			{0, 1, 1, 0},
-			{0, 0, 1, 1},
-			{0, 1, 0, 1},
-	};
-	auto result = getPath(mat,Spr,Dpr);
-*/	
-	otherMain();
-	return 0;
-}
-int otherMain()
-{
 	auto ranMat = generateMatrix();
-	/*
-	int rw = ranMat.size();
-	int cl = ranMat[0].size();
-	*/
 	randomPositionTarget(ranMat);
 	Solution S1(ranMat);
 	errLog(0xFF01);
 	errLog(0x0A01);
 	errLog(0x0FF1);
-	/* S1.print(); */
-	S1.allPaths();
-	S1.printPaths();
+	S1.print();
+	/* S1.allPaths(); */
+	/* S1.printPaths(); */
 	fstore(S1);
-	/* auto ans = S1.allPaths(); */
 	return 0;
 }
 
