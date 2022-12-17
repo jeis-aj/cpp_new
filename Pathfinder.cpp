@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <map>
 #include <time.h>
 #include <iomanip>
@@ -17,7 +18,6 @@ class Solution{
 	private:
 		/* vector<vector<int>> mat; */
 		T mat;
-		vector<vector<pair<int,int>>> solutionMatrix;
 		pair<int,int> SourcePair;
 		pair<int,int> DestPair;
 		pair<int,int> Initialpair{-1,-1};
@@ -28,13 +28,12 @@ class Solution{
 		void fstore(string fileName,void (*fn)(ostream&));
 		vector<pair<int,int>> mkPairlist( auto Npr , auto Ppr);
 		void getPath();
-		void printVisual();
+		void printVisual(int maxCount = -1);
 		void printPaths(ostream& out=cout);
 		void print(ostream& out = cout);
 		void sortSolution();
 		pair<pair<int,int>,pair<int,int>> randomPositionTarget();
 		/* void putTargets (pair<pair<int,int>,pair<int,int>> TargetPairs); */
-		bool comp(vector<pair<int,int>> element1,vector<pair<int,int>> element2);
 		vector<vector<pair<int,int>>> allPaths();
 		T getMatrix()	{
 			return mat;
@@ -56,12 +55,10 @@ void Solution<T>::putTargets (pair<pair<int,int>,pair<int,int>> TargetPairs){
 }
 */
 template <typename T>
-bool Solution<T>::comp(vector<pair<int,int>> element1,vector<pair<int,int>> element2){
-	return element1.size()<element2.size();
-}
-template <typename T>
 void Solution<T>::sortSolution(){
-	sort(solutionMatrix.begin(),solutionMatrix.end(),comp);
+	sort(result.begin(),result.end(),[](auto one,auto two){
+			return one.size() < two.size();
+			});
 }
 // put random rat and cheese
 template <typename T>
@@ -97,7 +94,7 @@ vector<vector<char>> generateMatrix(int rw,int cl){
 	vector <vector<char>> matrix;
 	for (int i=0; i< rw; ++i){
 		for (int j=0; j< cl; ++j){
-			bool state = rand()%4 <= 1;			// probability of tracks 1/7
+			bool state = rand()%5 <= 1;			// probability of tracks 1/7
 			char ch = state?'.':' ';
 			arr.push_back(ch);
 		}
@@ -109,15 +106,25 @@ vector<vector<char>> generateMatrix(int rw,int cl){
 
 // Generate random matrix
 vector <vector<char>> generateMatrix(){
-	 /* int cl = 19+rand()%9;	// random number bw 3 and 8 */
-	 /* int rw = 19+rand()%9; */
-	 int cl = 3+rand()%3;	// random number bw 3 and 8
-	 int rw = 3+rand()%3;
+	 int cl = 8+rand()%9;	// random number bw 3 and 8
+	 int rw = 8+rand()%9;
+	 /* int cl = 3+rand()%3;	// random number bw 3 and 8 */
+	 /* int rw = 3+rand()%3; */
 	 return generateMatrix(rw,cl);
 }
 
-/* int nextMain(){ */
+int otherMain();
 int main(int argc, char *argv[])
+{
+	char ch;
+	while(ch != 'x'){
+		otherMain();
+		cout << endl <<"Press 'X' to quit " <<endl;
+		cin.get(ch);
+	}
+	return 0;
+}
+int otherMain()
 {
 	srand(time(0));
 	auto ranMat = generateMatrix();
@@ -125,9 +132,10 @@ int main(int argc, char *argv[])
 	auto pos = S1.randomPositionTarget();
 	S1.print();
 	S1.getPath();
-	S1.printPaths();
-	S1.printVisual();
-	cout<< "\n\thello" <<endl;
+	/* S1.printPaths(); */
+	S1.sortSolution();
+	S1.printVisual(3);
+	cout << "END" <<endl;
 	/* cout << S1.result.empty(); */
 	/*
 	errLog(0xFF01);
@@ -232,36 +240,43 @@ void errLog(int errInt){
 }
 
 template<typename T>
-void Solution<T>::printVisual(){
+void Solution<T>::printVisual(int maxCount){
+	int i = 0;
 	if(result.empty()){
 		cout<< "No Path Available " <<endl;
 		return;
 	}
+	cout << "Number of Solutions Found: "<< result.size() << endl;
 	pair<int,int> pr;
 	map<pair<int,int>,bool> mp; 
+	if ( maxCount != -1 ){
+		cout << "List of top "<< maxCount << " Solutions"<< endl; }
 	for (auto cont: result){
-		cout <<endl<<"New Path:"<<endl;
+		if ( i == maxCount )
+			break;
+		++i;
+		cout <<endl<<"New Path: \t\t\t\t ###"<<endl;
 		for (auto Mpr: cont){
 			mp[Mpr] = true;
 		}
-			for(int i=0; i <mat.size(); ++i){
-				for(int j=0; j <mat[0].size(); ++j){
-					pr = {i,j};
-					if ( pr == SourcePair){
-							cout <<" & ";
-					}
-					else if ( pr == DestPair){
-							cout <<" @ ";
-					}
-						else if(mp[pr]){
-							cout <<" . ";
-						}
-						else
-							cout << "   ";
-					}
-				cout<<endl;
+		for(int i=0; i <mat.size(); ++i){
+			for(int j=0; j <mat[0].size(); ++j){
+				pr = {i,j};
+				if ( pr == SourcePair){
+					cout <<" & ";
+				}
+				else if ( pr == DestPair){
+					cout <<" @ ";
+				}
+				else if(mp[pr]){
+					cout <<" . ";
+				}
+				else
+					cout << "   ";
+			}
+			cout<<endl;
 		}
-			mp.clear();
+		mp.clear();
 	}
 }
 
