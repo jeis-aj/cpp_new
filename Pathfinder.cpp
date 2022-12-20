@@ -34,7 +34,7 @@ class Solution{												// main pathfinder class begins here
 		vector<ind> mkPairlist( auto Npr , auto Ppr);
 		void getPath();
 		void getPath(auto temp, auto mp);
-		void printVisual(int maxCount = -1);
+		void printVisual(ostream& = cout, int = -1);
 		void printPaths(ostream& out=cout);
 		void print(ostream& out = cout);
 		void sortSolution();
@@ -106,8 +106,8 @@ vector<vector<char>> generateMatrix(int rw,int cl){
 
 // Generate random matrix without specifying row and coloumn size ( randomly generate )
 vector <vector<char>> generateMatrix(){
-	 int cl = 15 +rand()%6;	// random number bw 3 and 8
-	 int rw = 9 +rand()%6;
+	 int cl = 10 +rand()%5;	// random number bw 10 and 14
+	 int rw = 8 +rand()%5;
 	 /* int cl = 3+rand()%3;	// random number bw 3 and 8 */
 	 /* int rw = 3+rand()%3; */
 	 return generateMatrix(rw,cl);
@@ -131,13 +131,17 @@ int randomPathFinder()			// main function to Execute random path find
 	auto ranMat = generateMatrix();
 	Solution  S1(ranMat);
 	auto pos = S1.randomPositionTarget();
+	fstream store("out.txt",ios::app);
+	S1.print(store);
 	S1.print();
 	S1.getPath();
 
 	/* S1.printPaths(); */		// printing all paths by pairs
 
 	S1.sortSolution();			// sort solution matrix (result) so that shortest path will get in first
-	S1.printVisual(3);			// visually prints paths, if any integer value provided that many paths will be printed, second argument by default is cout ( ostream& )
+	S1.printVisual(store,3);			// visually prints paths, if any integer value provided that many paths will be printed, second argument by default is cout ( ostream& )
+	S1.printVisual(cout,3);			// visually prints paths, if any integer value provided that many paths will be printed, second argument by default is cout ( ostream& )
+	store.close();
 	cout << "END" <<endl;
 
 	/*
@@ -254,22 +258,22 @@ void errLog(int errInt){									// error logs for easy debugging
 }
 
 template<typename T>
-void Solution<T>::printVisual(int maxCount){				// visually print all valid path matrix ( result matrix in the form of  - vector<vector<pair<int,int>>> - )
+void Solution<T>::printVisual(ostream& co ,int maxCount){				// visually print all valid path matrix ( result matrix in the form of  - vector<vector<pair<int,int>>> - )
 	int i = 0;
 	if(result.empty()){
-		cout<< "No Path Available " <<endl;
+		co << "No Path Available " <<endl;
 		return;
 	}
-	cout << "Number of Solutions Found: "<< result.size() << endl;
+	co << "Number of Solutions Found: "<< result.size() << endl;
 	ind pr;
 	map<ind,bool> mp; 
 	if ( maxCount != -1 ){									// if no argument passed in function, default argument is -1, so it prints all paths. but if provided any, prints that many
-		cout << "List of top "<< maxCount << " Solutions"<< endl; }
+		co << "List of top "<< maxCount << " Solutions"<< endl; }
 	for (auto cont: result){
 		if ( i == maxCount )
 			break;
 		++i;
-		cout <<endl<<"New Path: \t\t\t\t\t\t\t\t ###"<<endl;				// just to see if any solution achieved in glimps of look during execution
+		co <<endl<<"New Path: \t\t\t\t\t\t\t\t ###"<<endl;				// just to see if any solution achieved in glimps of look during execution
 		for (auto Mpr: cont){
 			mp[Mpr] = true;
 		}
@@ -277,18 +281,18 @@ void Solution<T>::printVisual(int maxCount){				// visually print all valid path
 			for(int j=0; j <mat[0].size(); ++j){
 				pr = {i,j};
 				if ( pr == SourcePair){
-					cout << " " << ratSymbol ;									// rat symbol
+					co << " " << ratSymbol ;									// rat symbol
 				}
 				else if ( pr == DestPair){
-					cout << " " << cheeseSymbol ;								// cheese symbol
+					co << " " << cheeseSymbol ;								// cheese symbol
 				}
 				else if(mp[pr]){
-					cout << " "<< pathValidSymbol ;							// valid path symbol can be changed here
+					co << " "<< pathValidSymbol ;							// valid path symbol can be changed here
 				}
 				else
-					cout << " "<< pathBlockSymbol ;							// path block symbol can be changed here
+					co << " "<< pathBlockSymbol ;							// path block symbol can be changed here
 			}
-			cout<<endl;
+			co<<endl;
 		}
 		mp.clear();
 	}
