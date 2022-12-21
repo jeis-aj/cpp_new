@@ -132,14 +132,14 @@ int randomPathFinder()			// main function to Execute random path find
 	Solution  S1(ranMat);
 	auto pos = S1.randomPositionTarget();
 	fstream store("out.txt",ios::app);
-	S1.print(store);
+	/* S1.print(store); */
 	S1.print();
 	S1.getPath();
 
 	/* S1.printPaths(); */		// printing all paths by pairs
 
 	S1.sortSolution();			// sort solution matrix (result) so that shortest path will get in first
-	S1.printVisual(store,3);			// visually prints paths, if any integer value provided that many paths will be printed, second argument by default is cout ( ostream& )
+	/* S1.printVisual(store,3);			// visually prints paths, if any integer value provided that many paths will be printed, second argument by default is cout ( ostream& ) */
 	S1.printVisual(cout,3);			// visually prints paths, if any integer value provided that many paths will be printed, second argument by default is cout ( ostream& )
 	store.close();
 	cout << "END" <<endl;
@@ -188,6 +188,11 @@ vector<T> proc(auto obj){
 
 template<typename T>
 void Solution<T>::getPath( auto temp, auto mp) {		// Recursively search for valid paths( backtrack/bruteforce )
+	if ( !result.empty() && !(temp.size() > result.back().size()) ){
+		/* mp[Spr] = false; */
+		temp.clear();
+		Spr = SourcePair;
+	}
 	if (Spr == DestPair){
 		temp.push_back(Spr);
 		result.push_back(temp);
@@ -195,14 +200,14 @@ void Solution<T>::getPath( auto temp, auto mp) {		// Recursively search for vali
 	}
 	else if(mp[Spr]);
 	else{
-		temp.push_back(Spr);
-		mp[Spr] = true;
-		auto nextPathlist = mkPairlist(Spr,Ppr);
-		for (auto CurrentPair: nextPathlist){
-			Spr = CurrentPair;
-			/* auto obj = thread(getPath,temp,mp); */						// multithreading code
-			 /* auto vect = proc(obj); */
-			getPath(temp,mp);												// single core/thread code
+			temp.push_back(Spr);
+			mp[Spr] = true;
+			auto nextPathlist = mkPairlist(Spr,Ppr);
+			for (auto CurrentPair: nextPathlist){
+				Spr = CurrentPair;
+				/* auto obj = thread(getPath,temp,mp); */						// multithreading code
+				/* auto vect = proc(obj); */
+				getPath(temp,mp);												// single core/thread code
 		}
 	}
 	mp[Spr] = false;
