@@ -22,8 +22,8 @@ void debug();
 void run();
 
 void loop(){
-	/* run();			// run main program */
-	debug();		// debug value
+	run();			// run main program
+	/* debug();		// debug value */
 }
 
 void debug(){
