@@ -7,6 +7,7 @@ int impactIndicator = 6;		// connected to an LED indication of deadly impact
 void setup (){
 	pinMode( Dehydrate_ind ,OUTPUT);
 	pinMode( impactIndicator,OUTPUT);
+	Serial.begin(9600);
 }
 
 struct value{
