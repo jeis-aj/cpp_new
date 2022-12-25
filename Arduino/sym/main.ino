@@ -2,6 +2,7 @@ int fsr_pin = A0;
 int rainDrop_pin = A1;
 int tempS_pin = A2;
 int Dehydrate_ind = 5;		// connected to an LED indication of dehydration
+int impactIndicator = 6;		// connected to an LED indication of deadly impact 
 
 void setup (){
 	pinMode( Dehydrate_ind ,OUTPUT);
