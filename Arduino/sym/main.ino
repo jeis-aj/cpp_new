@@ -26,15 +26,11 @@ void loop(){
 }
 
 void debug(){
-	
 	auto d = getValue();			// get data in strut form
-
 	Serial.print("temp read: ");
 	Serial.println(d.tempS_read);
-
 	Serial.print("fsr read: ");
 	Serial.println(d.fsr_read);
-
 	Serial.print("wet read: ");
 	Serial.println(d.rainDrop_read);
 }
@@ -54,7 +50,7 @@ void run(){
 	else{
 		digitalWrite(Dehydrate_ind ,LOW);	}
 	
-	bool isSeriousImpact = fsr_read > impact_thr;
+	bool isSeriousImpact = d.fsr_read > impact_thr;
 	if (isSeriousImpact){
 		digitalWrite(impactIndicator,HIGH);	}
 	else{
@@ -66,5 +62,5 @@ data getValue(){
 	int rainDrop_read = analogRead(rainDrop_pin);
 	int tempS_read = analogRead(tempS_pin);
 	data rtData { fsr_read,rainDrop_read,tempS_read };
-	return data;
+	return rtData;
 }
