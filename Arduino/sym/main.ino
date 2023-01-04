@@ -44,12 +44,12 @@ void debug(){
 void run(){
 
 	int temp_thr = 110;					// max temperature value before dehydration
-	int wet_thr = 300;					// wet sensor value, max water loss value
+	int wet_thr = 500;					// wet sensor value, max water loss value
 	int impact_thr = 950;				// init impact threshold
 
 	auto d = getValue();			// get data in strut form
 	bool excessive = d.tempS_read < temp_thr ;
-	bool dehydrated = excessive && d.rainDrop_read > wet_thr;			// assuming if temp and wetSensor exceed respective threshold value then dehydrated 
+	bool dehydrated = excessive && d.rainDrop_read < wet_thr;			// assuming if temp and wetSensor exceed respective threshold value then dehydrated 
 
 	if ( excessive ){
 		digitalWrite(tempIndicator ,HIGH); }		// if temp excessive indicator led
