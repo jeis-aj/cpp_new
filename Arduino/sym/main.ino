@@ -43,9 +43,9 @@ void debug(){
 
 void run(){
 
-	int temp_thr = 39;					// max temperature value before dehydration
-	int wet_thr = 500;					// wet sensor value, max water loss value
-	int impact_thr = 500;				// init impact threshold
+	int temp_thr = 110;					// max temperature value before dehydration
+	int wet_thr = 300;					// wet sensor value, max water loss value
+	int impact_thr = 950;				// init impact threshold
 
 	auto d = getValue();			// get data in strut form
 	bool excessive = d.tempS_read < temp_thr ;
