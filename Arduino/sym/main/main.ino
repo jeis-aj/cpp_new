@@ -31,10 +31,9 @@ void run();
 
 
 void loop() {
-  bool pr = pulseSensorRead();
-  digitalWrite(LED_BUILTIN, pr);
   run();			// run main program ..
-  debug();  // debug value
+  /* debug();  // debug value */
+	/* pulseSensorRead(); */
 }
 
 void debug() {
@@ -50,10 +49,23 @@ void debug() {
 }
 
 bool pulseSensorRead() {
+	millisDelay period;
+	int maxbeat = 150;				// max beat set 
+	int interval =	60 / maxbeat;			 // interval = cycle period for maxbeat
+	period.start( interval );
+	while(1){
+	if (period.justFinished()){
+		return false; }
   int readValue = analogRead(pulseSensorPin);
+  Serial.println(readValue);
   int threshold = 512;
   bool pr = readValue > threshold;
-  return pr;
+  if (pr){
+	  digitalWrite(LED_BUILTIN, HIGH);
+	  delay(70);
+	  digitalWrite(LED_BUILTIN, LOW);
+	  return true; }
+	}
 }
 
 void run() {
@@ -73,7 +85,7 @@ void run() {
     digitalWrite(tempIndicator, LOW);
   }
 
-  if (dehydrated) {
+  if (dehydrated &&  pulseSensorRead()) {
     digitalWrite(Dehydrate_ind, HIGH);
   }  // if dehydrated light-up indication LED
   else {
