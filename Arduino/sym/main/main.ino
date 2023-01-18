@@ -50,7 +50,7 @@ void debug() {
 
 bool pulseSensorRead() {
 	millisDelay period;
-	int maxbeat = 150;				// max beat set 
+	int maxbeat = 76;				// max beat set 
 	int interval =	60 / maxbeat;			 // interval = cycle period for maxbeat
 	period.start( interval );
 	while(1){

@@ -1,0 +1,1908 @@
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 12
+   . . . .   . . . . . .
+ .   .   . . . &        
+   .       .       .   .
+ . . . . . . .   . . .  
+   . .   . .     .     .
+ .   . . . . . .   . . .
+ . . .           . . .  
+ .       .   .     .   .
+ . .     @   .   .     .
+     . . . . .   . . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 11 COLOUMS: 13
+       . .         .     .
+     . . .   . . . . .    
+ . .   . . .   . . .     .
+   .           . .   .   .
+ .     . . .   . . . . . .
+ . & . . . .     .       .
+ .   .   .   .   .   . . .
+ . .   . . . . . .     .  
+   . .   .       .     .  
+ . .       . . .   @   . .
+   .   .   . . .   . . . .
+
+Number of Solutions Found: 6
+List of top 3 Solutions
+
+New Path: 								 ###
+                          
+                          
+                          
+                          
+                 . . . . .
+   & . . .       .       .
+         .       .     . .
+         . . . . .     .  
+                       .  
+                   @   .  
+                   . . .  
+
+New Path: 								 ###
+                          
+                          
+                          
+                          
+                 . . . . .
+   & . . .       .       .
+         .       .     . .
+         . . . . .     .  
+                       .  
+                   @   . .
+                   . . . .
+
+New Path: 								 ###
+                          
+                          
+                          
+                          
+       . .       . . . . .
+   & . . .       .       .
+         .       .     . .
+         . . . . .     .  
+                       .  
+                   @   .  
+                   . . .  
+	GIVEN MATRIX 
+ROWS: 11 COLOUMS: 11
+     .   . . . . .   .
+ . . .           .   .
+ .       .   . . . . .
+   . . .     .   .   .
+     .       . . . . .
+   .       . @ .     .
+ .   . . . .   . &   .
+ . . . . . .   .   . .
+   . . . . . . .   . .
+ .         . . . .   .
+ . .   .     . . . .  
+
+Number of Solutions Found: 324
+List of top 3 Solutions
+
+New Path: 								 ###
+                      
+                      
+                      
+                      
+                      
+             @ .      
+               . &    
+                      
+                      
+                      
+                      
+
+New Path: 								 ###
+                      
+                      
+                      
+                      
+             . .      
+             @ .      
+               . &    
+                      
+                      
+                      
+                      
+
+New Path: 								 ###
+                      
+                      
+                      
+                      
+                      
+           . @        
+           .   . &    
+           .   .      
+           . . .      
+                      
+                      
+	GIVEN MATRIX 
+ROWS: 11 COLOUMS: 14
+             .   .   . .   .
+ . .       . .   .   . . .  
+ .     . . .   . . . .   .  
+ . .   .   . . .   . . . .  
+ .     . . . . .   . . .   .
+ . . . . . .       . . .    
+ . .     . . . & . .   .   @
+ .   . . . .   .     . . . .
+   .     . .     .     . .  
+ . . .   . . .     .   . . .
+ . . . .   .   .   . .     .
+
+Number of Solutions Found: 18264
+List of top 3 Solutions
+
+New Path: 								 ###
+                            
+                            
+                            
+                            
+                            
+                   . . .    
+               & . .   .   @
+                       . . .
+                            
+                            
+                            
+
+New Path: 								 ###
+                            
+                            
+                            
+                            
+                            
+                   . . .    
+               & . .   .   @
+                       . . .
+                       . .  
+                            
+                            
+
+New Path: 								 ###
+                            
+                            
+                            
+                            
+                     . .    
+                   . . .    
+               & . .   .   @
+                       . . .
+                            
+                            
+                            
+	GIVEN MATRIX 
+ROWS: 9 COLOUMS: 10
+ . . . .   . . . . .
+ . .   .   . . . . .
+ . . . . . . . .    
+   . .   . . .   .  
+ . . &   . . .     .
+   . .       . . . .
+ .   . . . . .   . .
+   . . . .   . @ .  
+   . . . . . .   . .
+
+Number of Solutions Found: 26928
+List of top 3 Solutions
+
+New Path: 								 ###
+                    
+                    
+                    
+                    
+     &              
+     .              
+     . . . . .      
+             . @    
+                    
+
+New Path: 								 ###
+                    
+                    
+                    
+                    
+     &              
+     .              
+     . . .          
+         .   . @    
+         . . .      
+
+New Path: 								 ###
+                    
+                    
+                    
+                    
+     &              
+     .              
+     .   . . .      
+     . . .   . @    
+                    
+	GIVEN MATRIX 
+ROWS: 9 COLOUMS: 14
+ .     . . . .       . . .  
+   .   .   . .   . .        
+ . . . . .   .   .          
+ . .   . . . . . . . .     .
+   . . .   @   . . .   . .  
+ .   .     .   .   . . .    
+ . .       . .   .   .   .  
+ . .   . & . . .     .   . .
+   .     . .   . . . .   . .
+
+	GIVEN MATRIX 
+ROWS: 12 COLOUMS: 10
+   .   . .   .     .
+ . .   . .     & . .
+ .     . . .   . . .
+ . . . .            
+   .   . . . @ .   .
+   . .             .
+   .   . .   . . . .
+   .   . . . . .    
+     .   .   . . . .
+   . .   . .   .   .
+ . . . . .   .   . .
+         . .   .   .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 11
+   .       .   .   . .
+ . . .   . .   . @   .
+     .     .   .   . .
+       . & . . .     .
+ . .   . . .   .   . .
+   . . . . . . . .   .
+   .   . . . . .   .  
+   .   . . . . .   . .
+ . .   . . .   . .    
+ .   .   . .     . .  
+
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 14
+ .     . .     .   . . .   .
+   .     . .   . . . . .    
+ .       .   .         . . .
+ .     . .   & . . .   . @  
+   . . . . . .   . .   . .  
+   .     .   . . . . .      
+ .   . . . .   .       . .  
+ . . . . .   . . .   . .   .
+ .   .       . . .   . .   .
+ .   .   .   . . . .   . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 13
+   . .   .     . . . . .  
+ .   .   . . . .   . . . .
+   .         . . . .   .  
+ . .   . . . .   & . .    
+ . . . . .     .   @ . . .
+       . .     .   .   .  
+ . . . . . . .     .      
+   .         . . . . . .  
+
+Number of Solutions Found: 144
+List of top 3 Solutions
+
+New Path: 								 ###
+                          
+                          
+                          
+                 & .      
+                   @      
+                          
+                          
+                          
+
+New Path: 								 ###
+                          
+                          
+                          
+                 & . .    
+                   @ .    
+                          
+                          
+                          
+
+New Path: 								 ###
+                          
+                          
+                 . .      
+                 & .      
+                   @      
+                          
+                          
+                          
+	GIVEN MATRIX 
+ROWS: 12 COLOUMS: 14
+ .   .   . . . .     . . . .
+ . . . .   .   .   . .   . .
+ .             . . .     .  
+ . . .   . @   .       . . .
+ .               .     . .  
+ . .       . . . . . . . . .
+   . . .   . .     . . .   .
+ . . . . . . . .   .   .   .
+     .       .   . & . . . .
+ . .   .   .   .         .  
+ . .   . . .     . .       .
+ . .   .   . .   .   . .   .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 12 COLOUMS: 14
+ .   .   . . . .     . . . .
+ . . . .   .   .   . .   . .
+ .             . . .     .  
+ . . .   . @   .       . . .
+ .               .     . .  
+ . .       . . . . . . . . .
+   . . .   . .     . . .   .
+ . . . . . . . .   .   .   .
+     .       .   . & . . . .
+ . .   .   .   .         .  
+ . .   . . .     . .       .
+ . .   .   . .   .   . .   .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 12
+ .   .   . . . . .   . .
+ . . .       @ . .   .  
+ . .     . . . & . .    
+     .     . . . . . . .
+       . . . .   .   .  
+ .   . . . . . .   . .  
+ . . . .     . . . .    
+ .   . .   .   . . . . .
+ .     .     . . .   .  
+   . . . . . .       .  
+
+Number of Solutions Found: 24234
+List of top 3 Solutions
+
+New Path: 								 ###
+                        
+             @ .        
+               &        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+New Path: 								 ###
+                        
+             @          
+             . &        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+New Path: 								 ###
+             . .        
+             @ .        
+               &        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+	GIVEN MATRIX 
+ROWS: 12 COLOUMS: 10
+ . . . .   @ .     .
+ . . . . . . .     .
+       . . .     .  
+     . . .     . . .
+ . . . . . .     .  
+ . .   .   .   . .  
+ . &   . . .   . . .
+ .   .   .   . . .  
+ .     . . . . . . .
+     . .   . .   .  
+ . .   .   . . .    
+ . .     .   . .    
+
+Number of Solutions Found: 272
+List of top 3 Solutions
+
+New Path: 								 ###
+           @        
+           .        
+       . . .        
+       .            
+   . . .            
+   .                
+   &                
+                    
+                    
+                    
+                    
+                    
+
+New Path: 								 ###
+           @        
+         . .        
+         .          
+         .          
+   . . . .          
+   .                
+   &                
+                    
+                    
+                    
+                    
+                    
+
+New Path: 								 ###
+           @        
+           .        
+         . .        
+     . . .          
+   . .              
+   .                
+   &                
+                    
+                    
+                    
+                    
+                    
+	GIVEN MATRIX 
+ROWS: 11 COLOUMS: 12
+ . . .         . .   .  
+ .   . . . .   . .   .  
+ . . .   . & .          
+ . .   . . . .   .   . .
+ . .     .   .   . . . .
+   . . . . . . .   . . .
+ .         . .     .    
+ .         .       . .  
+ . .   .       .     .  
+ . . .   . .     .   @ .
+ .       . .     . . .  
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 9 COLOUMS: 12
+ . .     . . .   @ .    
+ . . . . .         .   .
+ . . .   . . .   .   .  
+ . .     . . .   . .   .
+   . .   . . .   .   .  
+       .   . .     . . .
+     .       . . & . . .
+   .   . . . . . . .    
+ . .   . . .   . . . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 9 COLOUMS: 12
+ . .     . . .   @ .    
+ . . . . .         .   .
+ . . .   . . .   .   .  
+ . .     . . .   . .   .
+   . .   . . .   .   .  
+       .   . .     . . .
+     .       . . & . . .
+   .   . . . . . . .    
+ . .   . . .   . . . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 13
+     .         .       . .
+ . & . . . .     @ . . .  
+   .   . .   . . . . .   .
+ .   .     . . .          
+ . .   . . .   .       . .
+ .     . . . . . . .     .
+   .   . . . . . .   . .  
+ . . . .         . . .    
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 13
+     .         .       . .
+ . & . . . .     @ . . .  
+   .   . .   . . . . .   .
+ .   .     . . .          
+ . .   . . .   .       . .
+ .     . . . . . . .     .
+   .   . . . . . .   . .  
+ . . . .         . . .    
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 12 COLOUMS: 12
+ .     . . .   .   . .  
+   . . . .     .   .   .
+     . . .   .   . .    
+         .   @ . .     .
+     .   . . . & .   .  
+ . .     .   . . .     .
+ . . .   . . .         .
+ . . .     . . .     . .
+   . . . . . .         .
+   . .   . . .   . . . .
+   .   . . .   .   .   .
+   . .   . .   . . . .  
+
+Number of Solutions Found: 36
+List of top 3 Solutions
+
+New Path: 								 ###
+                        
+                        
+                        
+             @          
+             . &        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+New Path: 								 ###
+                        
+                        
+                        
+             @ .        
+               &        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+New Path: 								 ###
+                        
+                        
+                        
+             @ . .      
+               & .      
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+	GIVEN MATRIX 
+ROWS: 12 COLOUMS: 12
+ .     . . .   .   . .  
+   . . . .     .   .   .
+     . . .   .   . .    
+         .   @ . .     .
+     .   . . . & .   .  
+ . .     .   . . .     .
+ . . .   . . .         .
+ . . .     . . .     . .
+   . . . . . .         .
+   . .   . . .   . . . .
+   .   . . .   .   .   .
+   . .   . .   . . . .  
+
+Number of Solutions Found: 36
+List of top 3 Solutions
+
+New Path: 								 ###
+                        
+                        
+                        
+             @          
+             . &        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+New Path: 								 ###
+                        
+                        
+                        
+             @ .        
+               &        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+New Path: 								 ###
+                        
+                        
+                        
+             @ . .      
+               & .      
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+	GIVEN MATRIX 
+ROWS: 12 COLOUMS: 10
+     . .   .     . .
+ .   . . .     .   .
+ . . .   . . .     .
+ . . .   @   .     .
+     .   . . . . . .
+   .   .   . & . . .
+     . . .   . .    
+         . . . .   .
+ .   . . . . . . . .
+   .   .         .  
+ . .   . . .        
+   . . . .   .      
+
+Number of Solutions Found: 40
+List of top 3 Solutions
+
+New Path: 								 ###
+                    
+                    
+                    
+         @          
+         . .        
+           . &      
+                    
+                    
+                    
+                    
+                    
+                    
+
+New Path: 								 ###
+                    
+                    
+                    
+         @          
+         . . .      
+             &      
+                    
+                    
+                    
+                    
+                    
+                    
+
+New Path: 								 ###
+                    
+                    
+                    
+         @          
+         . . . .    
+             & .    
+                    
+                    
+                    
+                    
+                    
+                    
+	GIVEN MATRIX 
+ROWS: 12 COLOUMS: 10
+ . .   .   . & .   .
+ .     .   . . . .  
+ . . . . .   . . . .
+ . .   . .   .   . .
+ .   .   . .   .    
+ .           . . . .
+ . . . .     . .    
+ . .     .   @   . .
+     . . . . . . . .
+ . .   . .   .   . .
+     .     . .   . .
+ . .   . . .   . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 12 COLOUMS: 10
+ . .   .   . & .   .
+ .     .   . . . .  
+ . . . . .   . . . .
+ . .   . .   .   . .
+ .   .   . .   .    
+ .           . . . .
+ . . . .     . .    
+ . .     .   @   . .
+     . . . . . . . .
+ . .   . .   .   . .
+     .     . .   . .
+ . .   . . .   . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 9 COLOUMS: 14
+ .   . . . . .     .        
+     .     . .     .       .
+     . .   . & . . . . . .  
+ . .   . . . . .     . @   .
+       .   . .   . . .     .
+ . . .   . . . . . . . . . .
+ .     .       . .   . .    
+ . . . .   . . .   .   . . .
+   .   . . . .   . . . .    
+
+Number of Solutions Found: 622
+List of top 3 Solutions
+
+New Path: 								 ###
+                            
+                            
+             & . . . .      
+                     . @    
+                            
+                            
+                            
+                            
+                            
+
+New Path: 								 ###
+                            
+                            
+             & . . . . .    
+                       @    
+                            
+                            
+                            
+                            
+                            
+
+New Path: 								 ###
+                            
+                            
+             & . . . .      
+             . .     . @    
+                            
+                            
+                            
+                            
+                            
+	GIVEN MATRIX 
+ROWS: 9 COLOUMS: 14
+ .   . . . . .     .        
+     .     . .     .       .
+     . .   . & . . . . . .  
+ . .   . . . . .     . @   .
+       .   . .   . . .     .
+ . . .   . . . . . . . . . .
+ .     .       . .   . .    
+ . . . .   . . .   .   . . .
+   .   . . . .   . . . .    
+
+Number of Solutions Found: 622
+List of top 3 Solutions
+
+New Path: 								 ###
+                            
+                            
+             & . . . .      
+                     . @    
+                            
+                            
+                            
+                            
+                            
+
+New Path: 								 ###
+                            
+                            
+             & . . . . .    
+                       @    
+                            
+                            
+                            
+                            
+                            
+
+New Path: 								 ###
+                            
+                            
+             & . . . .      
+             . .     . @    
+                            
+                            
+                            
+                            
+                            
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 13
+ . .     . . . .   . .   .
+ . . . . .     .     . . .
+ .   .   . . .   .        
+     . . . .   . @ . . . .
+ .     . .   . .   . . . .
+   . . . .   .   .   . . .
+ .   .   .       . .   .  
+   . . .   .   .   . . .  
+   . . .   . . .   . .   .
+ . & . . . . .     . . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 13
+ . .     . . . .   . .   .
+ . . . . .     .     . . .
+ .   .   . . .   .        
+     . . . .   . @ . . . .
+ .     . .   . .   . . . .
+   . . . .   .   .   . . .
+ .   .   .       . .   .  
+   . . .   .   .   . . .  
+   . . .   . . .   . .   .
+ . & . . . . .     . . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 14
+     @       . . . .     . .
+ . . . . .   . . .       . .
+     . .   . . . . . .   .  
+     .   .             .    
+   & .   .   .   .   .   . .
+     .     .     . . .   . .
+ . .   .   .       . . . .  
+ . .   . . . .   .       . .
+
+Number of Solutions Found: 2
+List of top 3 Solutions
+
+New Path: 								 ###
+     @                      
+     .                      
+     .                      
+     .                      
+   & .                      
+                            
+                            
+                            
+
+New Path: 								 ###
+     @                      
+     . .                    
+     . .                    
+     .                      
+   & .                      
+                            
+                            
+                            
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 14
+     @       . . . .     . .
+ . . . . .   . . .       . .
+     . .   . . . . . .   .  
+     .   .             .    
+   & .   .   .   .   .   . .
+     .     .     . . .   . .
+ . .   .   .       . . . .  
+ . .   . . . .   .       . .
+
+Number of Solutions Found: 2
+List of top 3 Solutions
+
+New Path: 								 ###
+     @                      
+     .                      
+     .                      
+     .                      
+   & .                      
+                            
+                            
+                            
+
+New Path: 								 ###
+     @                      
+     . .                    
+     . .                    
+     .                      
+   & .                      
+                            
+                            
+                            
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 14
+     @       . . . .     . .
+ . . . . .   . . .       . .
+     . .   . . . . . .   .  
+     .   .             .    
+   & .   .   .   .   .   . .
+     .     .     . . .   . .
+ . .   .   .       . . . .  
+ . .   . . . .   .       . .
+
+Number of Solutions Found: 2
+List of top 3 Solutions
+
+New Path: 								 ###
+     @                      
+     .                      
+     .                      
+     .                      
+   & .                      
+                            
+                            
+                            
+
+New Path: 								 ###
+     @                      
+     . .                    
+     . .                    
+     .                      
+   & .                      
+                            
+                            
+                            
+	GIVEN MATRIX 
+ROWS: 9 COLOUMS: 11
+ . .   . . . .   . .  
+   . . . . . . .      
+ & .     . . .   .   .
+ . . .     . .   . .  
+       . . . . .   .  
+   .   . .     . . .  
+   . . . . . @   .    
+     .     .   . . .  
+   . . . .   .     .  
+
+Number of Solutions Found: 640
+List of top 3 Solutions
+
+New Path: 								 ###
+                      
+   . . . . .          
+ & .       .          
+           .          
+         . .          
+         .            
+         . . @        
+                      
+                      
+
+New Path: 								 ###
+                      
+   . . . .            
+ & .     . .          
+           .          
+         . .          
+         .            
+         . . @        
+                      
+                      
+
+New Path: 								 ###
+       . .            
+   . . . .            
+ & .     . .          
+           .          
+         . .          
+         .            
+         . . @        
+                      
+                      
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 10
+       . .   . . .  
+   . . .     .   .  
+ . .   .   . . . .  
+ . .     . .     . .
+ . . .   .   . .    
+ . . . . .       . .
+   . . &     .      
+ . . . . . . .     @
+ .   .       .      
+     .     .       .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 10
+       . .   . . .  
+   . . .     .   .  
+ . .   .   . . . .  
+ . .     . .     . .
+ . . .   .   . .    
+ . . . . .       . .
+   . . &     .      
+ . . . . . . .     @
+ .   .       .      
+     .     .       .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 14
+   . . . .   .     . . .   .
+ . . .     . .   . . . . . .
+ . . . .         . .   .   .
+ .   .   . . . . .   .   . .
+         . .   . .   . . . .
+ . . .         .     . .    
+ @ . & .   . . . . . . .   .
+ . .   . . . . .   . . . . .
+ .         . .   . .   . . .
+   . . .   . .   .   .      
+
+Number of Solutions Found: 6
+List of top 3 Solutions
+
+New Path: 								 ###
+                            
+                            
+                            
+                            
+                            
+                            
+ @ . &                      
+                            
+                            
+                            
+
+New Path: 								 ###
+                            
+                            
+                            
+                            
+                            
+   . .                      
+ @ . &                      
+                            
+                            
+                            
+
+New Path: 								 ###
+                            
+                            
+                            
+                            
+                            
+ . . .                      
+ @   &                      
+                            
+                            
+                            
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 10
+ .   . &   .     . .
+   . . . .   . . .  
+ .             . .  
+ . .   .     .      
+ . .   .       . . .
+ . .   . .   . . . .
+ .   . . . .       .
+ . . . . . . . .   .
+ . . .   @   .     .
+ . .   . . . . .   .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 12
+ . .       .   . . . . .
+     .       .     . .  
+   .             .   . .
+ . .   . . .   . . . .  
+       . . .   . .   .  
+ . . . . .   . .     . .
+ .     . @ . .   . .   .
+ . .   . .       . .   .
+ . .   .         .   . .
+ .   .   . & .   . .    
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 9 COLOUMS: 13
+ . . . .           . .   .
+ .   . .   . . &   . . .  
+     . . . . . .     .   .
+ . .   . .   . . . . .   .
+   .   .     . . . . .   .
+ .     . . . . . . .   .  
+ . .     .   . . . . @ . .
+   .   . . . . . .        
+       .   . .     . . .  
+
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 14
+ .     .   . .   . .   . .  
+ .   .   . .   . .   . . .  
+ . . . . . .   . . @ . . . .
+ . . .   . .     . .   . .  
+ .   .   .   .   . . .     &
+   .   . . . . . .       . .
+ .   .   .             . . .
+ . . . . . .     .   . . .  
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 11 COLOUMS: 14
+ .     .     .   . . . . .  
+   . . &   .   . . . .   . .
+ . .   .     .   . . . .   .
+   . . . . . .   .       . .
+     .   . .     . .   .   .
+ .     . .     . .          
+           .   . . . .     .
+   .       . . .   .   .    
+ . . . .   .   .         . .
+ . . . . . . . . . .       .
+ . . . . @   .   . . . . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 11 COLOUMS: 14
+ .     .     .   . . . . .  
+   . . &   .   . . . .   . .
+ . .   .     .   . . . .   .
+   . . . . . .   .       . .
+     .   . .     . .   .   .
+ .     . .     . .          
+           .   . . . .     .
+   .       . . .   .   .    
+ . . . .   .   .         . .
+ . . . . . . . . . .       .
+ . . . . @   .   . . . . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 14
+ .       .       . . .     .
+   .   . . . . . . . .   . .
+       .       @   . .   . .
+     .   .   . . . . . . .  
+     . . .     . . . . . .  
+ . . .   . .       . .   .  
+ . . . . .   .   . . . .    
+ . . . &     . . . .   . .  
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 9 COLOUMS: 14
+   .     . .   . .   . .    
+     &   .     .   @     . .
+ .   . .   . . . .       .  
+ . .   .             .   .  
+     .   . . . . . .       .
+   . . . . . . . .   . . .  
+ . . . .     . . . .   .    
+   . .         . .       . .
+ . . . . .     . . .        
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 9 COLOUMS: 14
+   .     . .   . .   . .    
+     &   .     .   @     . .
+ .   . .   . . . .       .  
+ . .   .             .   .  
+     .   . . . . . .       .
+   . . . . . . . .   . . .  
+ . . . .     . . . .   .    
+   . .         . .       . .
+ . . . . .     . . .        
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 12
+ . . . . . . . .   & . .
+ .   . .   . . . .      
+ .   . . .   .   . . .  
+ @ .   .   .     . .   .
+       . .     . . .    
+ . . .     .         . .
+ .   .   . . . . . . . .
+   . . . . . .   .   . .
+ . . . . .   . .     .  
+ .   . .   .     .   . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 12
+ . . . . . . . .   & . .
+ .   . .   . . . .      
+ .   . . .   .   . . .  
+ @ .   .   .     . .   .
+       . .     . . .    
+ . . .     .         . .
+ .   .   . . . . . . . .
+   . . . . . .   .   . .
+ . . . . .   . .     .  
+ .   . .   .     .   . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 9 COLOUMS: 10
+ . . . . .   . . .  
+ . @ . . . . &      
+ . .   .   .   .   .
+   . . . . .        
+       .   .   . .  
+ . . . .   . .   . .
+   .     . . . . . .
+ . . . . .   . . . .
+ .   .       . .    
+
+Number of Solutions Found: 38
+List of top 3 Solutions
+
+New Path: 								 ###
+                    
+   @ . . . . &      
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+New Path: 								 ###
+     . . .          
+   @ .   . . &      
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+New Path: 								 ###
+       . .          
+   @ . . . . &      
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+	GIVEN MATRIX 
+ROWS: 12 COLOUMS: 11
+ .   .     . .   . .  
+   . . . .   . . . .  
+ .     .     . . .   .
+ . . . .   . .       .
+ .     . . . . . . . .
+ . . . .     . . & .  
+     .   . .   .   . .
+   . . . . .   . . .  
+     .     . . .     .
+ .       .       .   .
+     .             . .
+ @ . . . .   . . . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 11 COLOUMS: 14
+   . . .   .   . .   . . . .
+   . .   . . . . .     . . .
+ . & . .   .     . .   . .  
+ .   . .         .   .   . .
+ @ .     .   . . .     . .  
+ .         .   .   .   .   .
+ .   . . . . . . . . .   . .
+ .   .       . .   . .      
+ . . .   .   . .       . . .
+       .           . . . .  
+   .   .   . . .         .  
+
+Number of Solutions Found: 1
+List of top 3 Solutions
+
+New Path: 								 ###
+                            
+                            
+ . &                        
+ .                          
+ @                          
+                            
+                            
+                            
+                            
+                            
+                            
+	GIVEN MATRIX 
+ROWS: 12 COLOUMS: 11
+ . . . . . .   . . . .
+ .   .   . . . .     .
+   . . . .   @ . .   .
+   . .   .   . . . . .
+ . .   . .   .   .   .
+ . . . . . . . .   . .
+ . . .   . .     . .  
+ .   &   . . .     . .
+     . . .     . .   .
+ . .       . . . . .  
+   .           . . . .
+   . . . . . .   . . .
+
+Number of Solutions Found: 6784
+List of top 3 Solutions
+
+New Path: 								 ###
+                      
+                      
+             @        
+             .        
+             .        
+     . . . . .        
+     .                
+     &                
+                      
+                      
+                      
+                      
+
+New Path: 								 ###
+                      
+                      
+             @        
+             .        
+             .        
+         . . .        
+         .            
+     &   .            
+     . . .            
+                      
+                      
+                      
+
+New Path: 								 ###
+                      
+                      
+             @        
+             .        
+             .        
+   . . . . . .        
+   . .                
+     &                
+                      
+                      
+                      
+                      
+	GIVEN MATRIX 
+ROWS: 11 COLOUMS: 12
+   . . . . . . .   . . .
+   .   @   .   . . . . .
+   . . .   . . .       .
+ .   . . . . . . . . . .
+ .   . . .   . . . .   .
+ .     .     .       .  
+       . .   . .   . . .
+ . . . . . .   . .   . .
+ . .   .   .   . .   . .
+   . . . . .   & . .   .
+ .       .       .   . .
+
+	GIVEN MATRIX 
+ROWS: 11 COLOUMS: 11
+ .   .   . . .   . . .
+ . . . . .   . . . . &
+ . .   .     . .      
+ .   .   . .     . @ .
+ .         .   .   .  
+   .         .     . .
+     .     . .     . .
+ .   .   . .       . .
+ . . . . .   . . . . .
+   . .       .     . .
+ .     . . . . .     .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 13
+   . . .           . @    
+ . . . . . .   . .        
+     . . . . .            
+ . . . . .     . . . . . .
+     .         .       .  
+     .   .   .   . . . . .
+   .   . .   . & . . . . .
+ . . . .   . . .   . . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 13
+   . . .           . @    
+ . . . . . .   . .        
+     . . . . .            
+ . . . . .     . . . . . .
+     .         .       .  
+     .   .   .   . . . . .
+   .   . .   . & . . . . .
+ . . . .   . . .   . . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 14
+ .       .     .     . . . .
+ . . . . .     .       . . .
+ . . . . . . .   . . . . . .
+ .       .   . . . .   . .  
+ . . . .       .   . .   .  
+ .   .     . . .   . .      
+ . @   . . .   .         . .
+     .   . . . . &   .   . .
+
+Number of Solutions Found: 48
+List of top 3 Solutions
+
+New Path: 								 ###
+                            
+                            
+ . . . . . . .              
+ .           . .            
+ .             .            
+ .             .            
+ . @           .            
+               . &          
+
+New Path: 								 ###
+                            
+       . .                  
+ . . . . . . .              
+ .           . .            
+ .             .            
+ .             .            
+ . @           .            
+               . &          
+
+New Path: 								 ###
+                            
+     . . .                  
+ . . .   . . .              
+ .           . .            
+ .             .            
+ .             .            
+ . @           .            
+               . &          
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 11
+ .     .     . . . . .
+   . . . . . . . . . .
+ . . .   . . .   .   .
+ . . . . . . .   .   .
+ .     . @ . .   . . .
+ . . .     . .       .
+ .   . . . . . .   . .
+ . .   .     . .      
+
+Number of Solutions Found: 1
+List of top 3 Solutions
+
+New Path: 								 ###
+                      
+                      
+                      
+                      
+         &            
+                      
+                      
+                      
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 11
+ .     .     . . . . .
+   . . . . . . . . . .
+ . . .   . . .   .   .
+ . . . . . . .   .   .
+ .     . @ . .   . . .
+ . . .     . .       .
+ .   . . . . . .   . .
+ . .   .     . .      
+
+Number of Solutions Found: 1
+List of top 3 Solutions
+
+New Path: 								 ###
+                      
+                      
+                      
+                      
+         &            
+                      
+                      
+                      
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 10
+ .     . . . .   .  
+ @   . . . .   .   .
+ .             .   .
+ . .     . . . . . .
+ & . .   . .   .    
+     .     . .   . .
+ . . .       .   . .
+   . . . . . . . .  
+ . .         . .   .
+ .   . .   . . . .  
+
+Number of Solutions Found: 2
+List of top 3 Solutions
+
+New Path: 								 ###
+                    
+ @                  
+ .                  
+ .                  
+ &                  
+                    
+                    
+                    
+                    
+                    
+
+New Path: 								 ###
+                    
+ @                  
+ .                  
+ . .                
+ & .                
+                    
+                    
+                    
+                    
+                    
+	GIVEN MATRIX 
+ROWS: 11 COLOUMS: 13
+   . . . . . . .   .     .
+       @   . . .   . . .  
+ . . .   .   .     . . .  
+ .   & .         . .   . .
+     .       .            
+   .   .   .   . .   . . .
+     . .   . . . . . .   .
+ .     .     .   . . . . .
+       . . . . .   . . .  
+   . .   . . . . . . . . .
+ .   .     .     . . . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 12 COLOUMS: 10
+   .   . . . .   .  
+ . .     .   . . . .
+ . .     .   . . .  
+ . .   .   .   . . .
+ .   .   . . .     .
+   . .   .       & .
+ .   . . . .   . . .
+ .     .   . . @    
+ . . .       . . .  
+   .   .     . .    
+ .     .            
+           . . . .  
+
+Number of Solutions Found: 2
+List of top 3 Solutions
+
+New Path: 								 ###
+                    
+                    
+                    
+                    
+                    
+                 &  
+               . .  
+               @    
+                    
+                    
+                    
+                    
+
+New Path: 								 ###
+                    
+                    
+                    
+                    
+                    
+                 & .
+               . . .
+               @    
+                    
+                    
+                    
+                    
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 10
+ .   .   . .        
+       .   . .   .  
+   .   . . . . . . .
+ . . . . .     .    
+ . . .     . . .    
+ . . .       . . .  
+ . .         .   . &
+   @   . .   .     .
+
+Number of Solutions Found: 176
+List of top 3 Solutions
+
+New Path: 								 ###
+                    
+                    
+       . . . . .    
+     . .       .    
+   . .         .    
+   .           . .  
+   .             . &
+   @                
+
+New Path: 								 ###
+                    
+                    
+         . . . .    
+     . . .     .    
+     .         .    
+   . .         . .  
+   .             . &
+   @                
+
+New Path: 								 ###
+                    
+                    
+         . . . .    
+     . . .     .    
+   . .         .    
+   .           . .  
+   .             . &
+   @                
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 10
+ . . . .   .     .  
+ . . . .   .   . . .
+ . . .           . .
+     . . . . . . . .
+     . .   . . .    
+ . . .     .   .   .
+ .     .   . . . .  
+   . . .   . @ . . .
+ . . . . .   . . .  
+ . . . . . .   &   .
+
+Number of Solutions Found: 44
+List of top 3 Solutions
+
+New Path: 								 ###
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+             @      
+             . .    
+               &    
+
+New Path: 								 ###
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+             @ .    
+               .    
+               &    
+
+New Path: 								 ###
+                    
+                    
+                    
+                    
+                    
+                    
+             . .    
+             @ .    
+               .    
+               &    
+	GIVEN MATRIX 
+ROWS: 8 COLOUMS: 12
+       . . . . . . .   .
+ .   . . . .   . . .   .
+ . .   . .   . .     . .
+ .       . . .   .   .  
+ . . .   . . .     . . .
+   . .   . . . . @   . .
+ . . .   . .   . . & .  
+ . .   . . . . .   .   .
+
+Number of Solutions Found: 544
+List of top 3 Solutions
+
+New Path: 								 ###
+                        
+                        
+                        
+                        
+                        
+                 @      
+                 . &    
+                        
+
+New Path: 								 ###
+                        
+                        
+                        
+                        
+                        
+               . @      
+               . . &    
+                        
+
+New Path: 								 ###
+                        
+                        
+                        
+                        
+                        
+           . . . @      
+           .   . . &    
+           . . .        
+	GIVEN MATRIX 
+ROWS: 10 COLOUMS: 11
+     .   . .   . . . .
+ . .   . . . . . . . .
+ . @ . .   .       .  
+   . . . . .   .   .  
+   . .         .   .  
+ . . . . . . . . . . &
+ .       . .     . . .
+ . . . . . . . . . .  
+   . . .       . . .  
+ . . . .   . .   . . .
+
+	GIVEN MATRIX 
+ROWS: 11 COLOUMS: 10
+ . .   .   . . .    
+ . . . .   .   . .  
+   . . @ .     . . .
+ . .   . .     .    
+ . . .     . . .    
+ .   . . .   . . .  
+ .   . .   . . . .  
+ . . .   .   . . . .
+ .   . . .   .     .
+ .   & . . .   .    
+ . . .   .     . . .
+
+Number of Solutions Found: 96
+List of top 3 Solutions
+
+New Path: 								 ###
+                    
+                    
+   . . @            
+   .                
+   . .              
+     .              
+     .              
+     .              
+     .              
+     &              
+                    
+
+New Path: 								 ###
+                    
+                    
+   . . @            
+   .                
+   . .              
+     .              
+     .              
+     .              
+     . .            
+     & .            
+                    
+
+New Path: 								 ###
+                    
+                    
+   . . @            
+ . .                
+ .                  
+ .                  
+ .                  
+ . . .              
+     .              
+     &              
+                    
+	GIVEN MATRIX 
+ROWS: 12 COLOUMS: 13
+ . . .     .         .   .
+   .   . . .   . . . .   .
+     . . @   .     . .   .
+ .   .     .       . .    
+     .   . . . .     . . .
+ .       .         . .   .
+   .   . .   .   .   . . .
+ .   .   . . . . .   . . .
+         .   . . . &      
+   . .     . . . .       .
+ . . .   . .     .   . . .
+   . .   .   . .     . . .
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 9 COLOUMS: 12
+ .   . .   . .     .    
+ .   .   @ .   .       .
+       . .   .         .
+ . . . .   . .     . . .
+ . . . . . .   .   .   .
+ . . . . . .     .   . .
+ . . . .     . . &     .
+ . . . . . .   .   .   .
+ . . . . . . .          
+
+No Path Available 
+	GIVEN MATRIX 
+ROWS: 9 COLOUMS: 13
+ . . @   . . . .   . .   .
+   . . . . . . . . . . .  
+     . . . . .   .   . . .
+   .   . .     & .   . . .
+     . .   . .   .   . . .
+   .   . .   .   . .     .
+ . . .     .     .   .    
+     .   . . . .   . .   .
+ . . .   . . .       . . .
+
+Number of Solutions Found: 252
+List of top 3 Solutions
+
+New Path: 								 ###
+     @                    
+     . . . . . . .        
+                 .        
+               & .        
+                          
+                          
+                          
+                          
+                          
+
+New Path: 								 ###
+   . @                    
+   . . . . . . . .        
+                 .        
+               & .        
+                          
+                          
+                          
+                          
+                          
+
+New Path: 								 ###
+     @                    
+     .     . . . .        
+     . . . .     .        
+               & .        
+                          
+                          
+                          
+                          
+                          

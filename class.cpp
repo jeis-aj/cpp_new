@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std; 
 
-
 class P1{
 	public:
 		 void fn(void){
