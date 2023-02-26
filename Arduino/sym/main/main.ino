@@ -104,13 +104,12 @@ void loop() {
 	/* cmd ="read pulse"; */
 	/* int del = 25000; */
 	/* command(cmd, del); */
-	cmd ="get value";
+
+	/* cmd ="read pulse"; */
+	/* cmd ="read dht"; */
+	cmd ="run";
 	command(cmd );
 	/* led_indicator(CYAN); */
-	/*
-	   for(colour_no = 0; colour_no < 8; colour_no ++){
-	   }
-	 */
 	/* read_dht11(); */
 	delay(500);
 }
@@ -175,43 +174,31 @@ void run() {
 	int wet_thr = 300;     // wet sensor value, max water loss value
 	int impact_thr = 26;  // init impact threshold
 
-	auto d = getValue(0);  // get data in strut form
+	auto d = getValue(1);  // get data in strut form
 	bool excessive = d.tempS_read < temp_thr;
 	bool dehydrated = excessive && d.rainDrop_read < wet_thr;  // assuming if temp and wetSensor exceed respective threshold value then dehydrated
 
 	if (excessive) {
 		/* digitalWrite(tempIndicator, HIGH); */
-		led_indicator(RED);
+		/* led_indicator(RED); */
+		Serial.print("Excessive Temperature.....##");
 	}  // if temp excessive indicator led
 	else {
-		led_indicator(GREEN);
+		/* led_indicator(GREEN); */
 		/* digitalWrite(tempIndicator, LOW); */
 	}
 
 	if (dehydrated &&  pulseSensorRead()) {
-		led_indicator(CYAN);
-		/* digitalWrite(Dehydrate_ind, HIGH); */
+		/* led_indicator(BLUE); */
+		Serial.print("Dehydrated .....##");
 	}  // if dehydrated light-up indication LED
-	else {
-		led_indicator(WHITE);
-		/* digitalWrite(Dehydrate_ind, LOW); */
-	}
-
-	bool isSeriousImpact = d.fsr_read < impact_thr;
-	if (isSeriousImpact) {
-		/* digitalWrite(impactIndicator, HIGH); */
-		led_indicator(MAGENTA);
-	} else {
-		led_indicator(BLUE);
-		/* digitalWrite(impactIndicator, LOW); */
-	}
 }
-
 
 struct value getValue(bool visible) {
 	int fsr_read = analogRead(fsr_pin);
 	int rainDrop_read = analogRead(rainDrop_pin);
-	int tempS_read = analogRead(tempS_pin);
+	/* int tempS_read = analogRead(tempS_pin); */
+	int tempS_read = 150;
 	/* tempS_read = tempS_pin * 500 / 1023; */
 
 	if(visible){
