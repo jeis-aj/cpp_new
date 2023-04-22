@@ -43,7 +43,7 @@ data getValue(bool);
 void debug();
 void run();
 
-void read_dht(void);
+void read_dht(bool = 0);
 bool state = HIGH;
 
 void led_indicator(uint8_t colour_no);
@@ -59,6 +59,11 @@ void command(String cmd ){
 		pulse_read();
 		/* led_indicator(CYAN); */
 	}
+	
+	else if (cmd == "ecg"){
+		ecg_filtered();
+		/* led_indicator(CYAN); */
+	}
 	else if (cmd == "get value" ){
 		getValue(1);
 		/* led_indicator(RED); */
@@ -68,17 +73,17 @@ void command(String cmd ){
 		/* led_indicator(GREEN); */
 	}
 	else if (cmd == "read dht" ){
-		read_dht();
-		led_indicator(MAGENTA);
+		read_dht(1);
+		/* led_indicator(MAGENTA); */
 	}
 	else if (cmd == "red" ){
-		led_indicator(RED);
+		/* led_indicator(RED); */
 	}
 	else if (cmd == "blue" ){
-		led_indicator(BLUE);
+		/* led_indicator(BLUE); */
 	}
 	else if (cmd == "green" ){
-		led_indicator(GREEN);
+		/* led_indicator(GREEN); */
 	}
 	else{
 		Serial.println("Wrong Command");
@@ -88,7 +93,7 @@ void command(String cmd ){
 		/* goto L1; */
 	
 }
-void loop() {
+void loop_1() {
 	/* run();			// run main program .. */
 	/* debug();  // debug value */
 	/* pulseSensorRead(); */
@@ -105,13 +110,14 @@ void loop() {
 	/* int del = 25000; */
 	/* command(cmd, del); */
 
-	/* cmd ="read pulse"; */
 	/* cmd ="read dht"; */
-	cmd ="run";
+	/* cmd ="ecg"; */
+	cmd = "get value";
 	command(cmd );
+	/* cmd ="read pulse"; */
 	/* led_indicator(CYAN); */
 	/* read_dht11(); */
-	delay(500);
+	delay(300);
 }
 
 void led_indicator(uint8_t colour_no){
@@ -170,18 +176,18 @@ bool pulseSensorRead() {
 
 void run() {
 
-	int temp_thr = 140;    // max temperature value before dehydration
+	int temp_thr = 36;    // max temperature value before dehydration
 	int wet_thr = 300;     // wet sensor value, max water loss value
 	int impact_thr = 26;  // init impact threshold
 
-	auto d = getValue(1);  // get data in strut form
+	auto d = getValue(0);  // get data in strut form
 	bool excessive = d.tempS_read < temp_thr;
 	bool dehydrated = excessive && d.rainDrop_read < wet_thr;  // assuming if temp and wetSensor exceed respective threshold value then dehydrated
 
 	if (excessive) {
 		/* digitalWrite(tempIndicator, HIGH); */
 		/* led_indicator(RED); */
-		Serial.print("Excessive Temperature.....##");
+		Serial.println("Excessive Temperature.....##");
 	}  // if temp excessive indicator led
 	else {
 		/* led_indicator(GREEN); */
@@ -190,20 +196,21 @@ void run() {
 
 	if (dehydrated &&  pulseSensorRead()) {
 		/* led_indicator(BLUE); */
-		Serial.print("Dehydrated .....##");
+		Serial.println("Dehydrated .....##");
 	}  // if dehydrated light-up indication LED
+	ecg_filtered();
 }
 
 struct value getValue(bool visible) {
 	int fsr_read = analogRead(fsr_pin);
 	int rainDrop_read = analogRead(rainDrop_pin);
-	/* int tempS_read = analogRead(tempS_pin); */
-	int tempS_read = 150;
+	int tempS_read = thermister_read();
+	/* int tempS_read = 150; */
 	/* tempS_read = tempS_pin * 500 / 1023; */
 
 	if(visible){
-		/* Serial.print("temp read: "); */
-		/* Serial.println(tempS_read); */
+		Serial.print("temp read: ");
+		Serial.println(tempS_read);
 		Serial.print("fsr read: ");
 		Serial.println(fsr_read);
 		Serial.print("wet read: ");
